@@ -11,6 +11,9 @@
 
     <?php
     session_start();
+    if (isset($_SESSION['unique_id'])) {
+        header("location: dashboard.php");
+    }
     include 'db/config.php';
     // Check if the form is submitted
     if (isset($_POST['submit'])) {
